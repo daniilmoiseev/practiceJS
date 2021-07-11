@@ -1,40 +1,57 @@
-let buttonEnter = document.getElementById('enter');
-let userInput = document.getElementById('userInput');
-let ul = document.querySelector('ul');
+$(function(){
+    let buttonEnter = $('#enter');
+    let userInput = $('#userInput');
+    let ul = $('ul');
+    let localStorage = window.localStorage;
+    let todoMap = [
+        {
+            ind: 1,
+            text: 'example'
+        }
+    ]
 
-function inputLength() {
-    return userInput.value.length > 0;
-}
-
-function createTodo() {
-    let li = document.createElement("li");
-    li.appendChild(document.createTextNode(userInput.value));
-    ul.appendChild(li);
-    userInput.value = '';
-
-    let deleteButton = document.createElement('button');
-    deleteButton.appendChild(document.createTextNode('X'));
-    li.appendChild(deleteButton);
-    deleteButton.addEventListener('click', deleteTodoItem);
-
-    li.onclick = () => {
-        li.classList.toggle('done');
-    };
-
-    function deleteTodoItem() {
-        li.classList.add('delete');
+    function inputLength() {
+        return !!userInput.val();
     }
-}
 
-function changeListAfterKeypress(event) {
-    if (inputLength() && event.which === 13) {
-        createTodo();
-    }
-}
+    function createTodo() {
+        let li = $("<li>");
+        li.append(document.createTextNode(userInput.val()));
+        ul.append(li);
+        todoMap.push({
+            ind: todoMap.length + 1,
+            text: userInput.val()
+        });
+        localStorage.setItem('Todo_list', JSON.stringify(todoMap));
+        userInput.val('');
 
-buttonEnter.onclick = () => { 
-    if (inputLength()) {
-        createTodo();
+        let deleteButton = $('<button>');
+        deleteButton.append(document.createTextNode('X'));
+        li.append(deleteButton);
+        deleteButton.click(deleteTodoItem);
+
+        li.click(() => {
+            li.toggleClass('done');
+        });
+
+        function deleteTodoItem() {
+            li.fadeOut(1000);
+            //li.addClass('delete');
+        }
     }
-};
-userInput.addEventListener('keypress', changeListAfterKeypress);
+
+    function changeListAfterKeypress(event) {
+        if (inputLength() && event.which === 13) {
+            createTodo();
+        }
+    }
+
+    buttonEnter.click(function() {
+        if (inputLength()) {
+            createTodo();
+        }
+    });
+    userInput.keypress(changeListAfterKeypress);
+})
+
+// в local storage записывать 
