@@ -1,5 +1,3 @@
-const { listenerCount } = require("events");
-
 $(function(){
     let buttonEnter = $('#enter');
     let userInput = $('#userInput');
@@ -35,6 +33,7 @@ $(function(){
             text: userInput.val()
         });
         localStorage.setItem('Todo_list', JSON.stringify(todoMap));
+
         userInput.val('');
 
         let deleteButton = $('<button>', { text: 'X' });
@@ -54,6 +53,18 @@ $(function(){
             
         }
     }
+
+    // for (let i = 2; i < todoMap.length + 2; i++) {
+    //     const element = localStorage.getItem('Todo_list');
+    //     let li = $("<li>", { text: element.text });
+    //     li.hide();
+    //     ul.append(li);
+    //     li.fadeIn(300);
+    //     li.animate({
+    //         'margin-left': '0px',
+    //         'margin-right': '0px'
+    //     }, 500);
+    // }
 
     function changeListAfterKeypress(event) {
         if (inputLength() && event.which === 13) {
