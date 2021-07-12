@@ -106,3 +106,9 @@ input {
 .delete {
 	display: none;
 }
+
+.del {
+	text-decoration: line-through;
+	background: #8a8a8a !important;
+	color: #3f3f3f;
+}

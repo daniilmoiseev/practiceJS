@@ -1,3 +1,5 @@
+const { listenerCount } = require("events");
+
 $(function(){
     let buttonEnter = $('#enter');
     let userInput = $('#userInput');
@@ -15,9 +17,19 @@ $(function(){
     }
 
     function createTodo() {
-        let li = $("<li>");
-        li.append(document.createTextNode(userInput.val()));
+        let li = $("<li>", { text: userInput.val()});
+        li.css({
+            'margin-left': '100px',
+            'margin-right': '100px'
+        });
+        li.hide();
         ul.append(li);
+        li.fadeIn(300);
+        li.animate({
+            'margin-left': '0px',
+            'margin-right': '0px'
+        }, 500);
+
         todoMap.push({
             ind: todoMap.length + 1,
             text: userInput.val()
@@ -25,8 +37,7 @@ $(function(){
         localStorage.setItem('Todo_list', JSON.stringify(todoMap));
         userInput.val('');
 
-        let deleteButton = $('<button>');
-        deleteButton.append(document.createTextNode('X'));
+        let deleteButton = $('<button>', { text: 'X' });
         li.append(deleteButton);
         deleteButton.click(deleteTodoItem);
 
@@ -35,8 +46,12 @@ $(function(){
         });
 
         function deleteTodoItem() {
-            li.fadeOut(1000);
-            //li.addClass('delete');
+            li.addClass('del');
+            li.animate({
+                'margin-left': '200px',
+                'margin-right': '200px'
+            }, 500).fadeOut(500).remove(500);
+            
         }
     }
 

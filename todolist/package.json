@@ -1,0 +1,16 @@
+{
+  "name": "todolist",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass sass/main.sass assets/css/main.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DMoiseev",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^6.0.1"
+  }
+}
