@@ -1,7 +1,9 @@
 var Actions = {
-    USER_CONNECTED: 'user-connected',
-    USER_DISCONNECTED: 'user-disconnected',
-    USER_MESSAGE: 'user-message'
-}
+    USER_CONNECTED: "user-connected",
+    USER_DISCONNECTED: "user-disconnected",
+    USER_MESSAGE: "user-message",
+};
 
-module.exports = Actions;
+if (typeof module !== "undefined") {
+    module.exports = Actions;
+}

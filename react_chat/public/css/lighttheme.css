@@ -2,9 +2,8 @@ body,
 html {
   height: 100%;
   transition: 1s;
-  background-color: #020f47;
+  background-color: #bddd81;
 }
-
 #container {
   width: 90%;
   margin: auto;
@@ -29,7 +28,7 @@ html {
 
 .chat-message {
   transition: 1s;
-  background: #020f47;
+  background: #bddd81;
   border-radius: 12px;
   display: inline-flex;
   align-items: center;
@@ -168,8 +167,8 @@ html {
 }
 button {
   padding: 8px;
-  background-color: #ffffff;
-  color: #020f47;
+  background-color: #020f47;
+  color: white;
   border: none;
   border-radius: 3px;
   font-size: 1em;
@@ -178,6 +177,6 @@ button {
   margin-left: 90%;
   margin-top: -10%;
 }
-button:hover {
-  background: rgb(201, 203, 226);
+button {
+  background: rgb(45, 50, 102);
 }
