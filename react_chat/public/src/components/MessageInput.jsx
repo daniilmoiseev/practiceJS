@@ -3,15 +3,15 @@
 var MessageInput = React.createClass({
     mixins: [React.addons.LinkedStateMixin],
 
-    getInitialState: function () {
+    getInitialState: function(){
         return {
             message: ''
         }
     },
 
-    keyHandler: function (event) {
+    keyHandler: function(event) {
         var message = this.state.message;
-        if (event.keyCode === 13 && message.length) {
+        if (event.keyCode === 13 && message.length){
             this.props.messageHandler(message);
             this.setState({
                 message: ''
@@ -19,9 +19,9 @@ var MessageInput = React.createClass({
         }
     },
 
-    render: function () {
+    render: function() {
         return (
-            <input
+            <input 
                 className="form-control" type="text"
                 placeholder="Enter something..."
                 valueLink={this.linkState("message")}

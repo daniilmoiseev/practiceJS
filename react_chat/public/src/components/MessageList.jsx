@@ -3,32 +3,32 @@
 'use strict'
 
 var MessagesList = React.createClass({
-    getInitialState: function () {
+    getInitialState: function() {
         return {
             messages: []
         }
     },
 
-    addMessage: function (message) {
+    addMessage: function(message) {
         var messages = this.state.messages
         var container = this.refs.msgContainer.getDOMNode()
         messages.push(message)
-        this.setState({
+        this.setState ({
             messages: messages
         })
     },
 
-    componentDidUpdate: function () {
+    componentDidUpdate: function() {
         var container = this.refs.msgContainer.getDOMNode()
         container.scrolltop = container.scrollHeight
     },
 
-    render: function () {
+    render: function() {
         var messages
-        if (this.state === null) return
-        messages = this.state.messages.map(function (msg) {
+        if (this.state ===null) return
+        messages = this.state.messages.map(function(msg) {
             return (
-                <ChatMessage message={msg}></ChatMessage>
+                <ChatMessage message = {msg}></ChatMessage>
             )
         })
         if (!messages.length) {
@@ -36,7 +36,7 @@ var MessagesList = React.createClass({
                 <div className="chat-messages-empty">No message yet </div>
             </div>;
         }
-        return (
+        return(
             <div ref="msgContainer" className="chat-messages col-xs-9 col-md-8 col-lg-8">
                 {messages}
             </div>
