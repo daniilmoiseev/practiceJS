@@ -5,8 +5,10 @@ switchMode.onclick = function () {
     let theme= document.getElementById("theme");
     if (theme.getAttribute("href") == "css/main.css") {
         theme.href="css/lighttheme.css";
+        switchMode.innerHTML = "Ночь";
     }else{
         theme.href="css/main.css";
+        switchMode.innerHTML = "День";
     }
 }
 'use strict';

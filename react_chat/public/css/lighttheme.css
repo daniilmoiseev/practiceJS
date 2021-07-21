@@ -2,7 +2,7 @@ body,
 html {
   height: 100%;
   transition: 1s;
-  background-color: #bddd81;
+  background-color: #E9E9E9;
 }
 #container {
   width: 90%;
@@ -11,7 +11,7 @@ html {
 }
 
 .chat-messages {
-  background-color: #68bbce;
+  background-color: #c0c0c0;
   height: 100%;
   overflow-y: auto;
   border-radius: 12px;
@@ -28,7 +28,7 @@ html {
 
 .chat-message {
   transition: 1s;
-  background: #bddd81;
+  background: #E9E9E9;
   border-radius: 12px;
   display: inline-flex;
   align-items: center;
@@ -42,7 +42,7 @@ html {
 .user2 {
   margin-top: 0%;
   font-size: 40px;
-  color: #fb8500;
+  color: #000000;
   margin-left: 43%;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -76,7 +76,7 @@ html {
 
 .chat-header {
   font-size: 40px;
-  color: #fb8500;
+  color: #000000;
   margin-bottom: 30px;
   margin-left: 47%;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -89,12 +89,12 @@ html {
 
 .chat-message-content {
   font-size: 16px;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .chat-message-time,
 .chat-message-author {
-  color: yellow;
+  color: rgb(83, 83, 83);
   margin-right: 5px;
 }
 
@@ -112,7 +112,7 @@ html {
 .user {
   margin-top: 16%;
   font-size: 16px;
-  color: #fb8500;
+  color: #000000;
   margin-left: 40%;
 }
 #username-input {
@@ -127,9 +127,9 @@ html {
 .button {
   display: inline-block;
   border-radius: 4px;
-  background-color: #f4511e;
+  background-color: #a5a5a5;
   border: none;
-  color: #ffffff;
+  color: #000000;
   font-size: 16px;
   padding: 22px;
   width: 120px;
